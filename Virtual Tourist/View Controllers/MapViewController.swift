@@ -41,7 +41,8 @@ class MapViewController: UIViewController {
     func restoreMapRegion() {
         // Check if the user has persisted a tracking mode.
         if let userTrackingMode = UserDefaults.standard.value(forKey: UserDefaultsKeys.userTrackingMode) as? Int {
-            mapView.userTrackingMode = MKUserTrackingMode(rawValue: userTrackingMode)!
+            let mode = MKUserTrackingMode(rawValue: userTrackingMode)!
+            mapView.setUserTrackingMode(mode, animated: false)
         } else {
             
         }
