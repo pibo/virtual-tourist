@@ -12,7 +12,6 @@ import CoreLocation
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
-        
         // Ask for the user permission in the first time the user changes his tracking mode.
         let authorization = CLLocationManager.authorizationStatus()
         if authorization != .authorizedWhenInUse {

@@ -6,7 +6,10 @@ O último app do Nanodegree da Udacity. Este app permite que o usuário marque u
 
 No desenvolvimento deste app foram aprendidos os seguintes conceitos:
 
-* 
+* Armazenamento de dados no `UserDefaults`
+* Alteração da localização do mapa com `setRegion`
+* Localização do usuário com `MKUserTrackingBarButtonItem` e `CLLocationManager().requestWhenInUseAuthorization`
+* Notificações disparadas no life cycle do app, como `UIApplication.willTerminateNotification`
 
 ### Instalação
 
