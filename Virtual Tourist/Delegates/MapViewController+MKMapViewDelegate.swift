@@ -20,6 +20,10 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         // Persist the tracking mode.
-        UserDefaults.standard.set(mode.rawValue, forKey: UserDefaultsKeys.userTrackingMode)
+        if mode == .none {
+            UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userTrackingMode)
+        } else {
+            UserDefaults.standard.set(mode.rawValue, forKey: UserDefaultsKeys.userTrackingMode)
+        }
     }
 }

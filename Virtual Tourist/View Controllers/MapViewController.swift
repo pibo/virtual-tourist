@@ -28,8 +28,20 @@ class MapViewController: UIViewController {
         // Define delegates.
         mapView.delegate = self
         
+        // Subscribe to app events to save the map's region.
+        NotificationCenter.default.addObserver(self, selector: #selector(persistMapRegion), name: UIApplication.willTerminateNotification, object: nil)
+        
         setupUserTrackingButton()
         restoreMapRegion()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        persistMapRegion()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
     }
     
     // MARK: - Helper Methods
@@ -38,13 +50,31 @@ class MapViewController: UIViewController {
         navigationItem.rightBarButtonItem = MKUserTrackingBarButtonItem(mapView: mapView)
     }
     
+    @objc func persistMapRegion() {
+        let centerCoordinate = mapView.region.center
+        let coordinateSpan = mapView.region.span
+        
+        let regionDictionary: [String: CLLocationDegrees] = [
+            "latitude": centerCoordinate.latitude,
+            "longitude": centerCoordinate.longitude,
+            "latitudeDelta": coordinateSpan.latitudeDelta,
+            "longitudeDelta": coordinateSpan.longitudeDelta,
+        ]
+        
+        UserDefaults.standard.set(regionDictionary, forKey: UserDefaultsKeys.mapViewLastRegion)
+    }
+    
     func restoreMapRegion() {
-        // Check if the user has persisted a tracking mode.
+        // Prioritize if the user has persisted a tracking mode.
         if let userTrackingMode = UserDefaults.standard.value(forKey: UserDefaultsKeys.userTrackingMode) as? Int {
             let mode = MKUserTrackingMode(rawValue: userTrackingMode)!
             mapView.setUserTrackingMode(mode, animated: false)
-        } else {
+        } else if let persistedRegion = UserDefaults.standard.dictionary(forKey: UserDefaultsKeys.mapViewLastRegion) as? [String: CLLocationDegrees] {
+            let center = CLLocationCoordinate2DMake(persistedRegion["latitude"]!, persistedRegion["longitude"]!)
+            let span = MKCoordinateSpan(latitudeDelta: persistedRegion["latitudeDelta"]!, longitudeDelta: persistedRegion["longitudeDelta"]!)
+            let region = MKCoordinateRegion(center: center, span: span)
             
+            mapView.setRegion(region, animated: false)
         }
     }
 }

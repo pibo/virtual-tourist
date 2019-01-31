@@ -11,5 +11,6 @@ import Foundation
 struct UserDefaultsKeys {
     
     static let userTrackingMode = "User Tracking Mode"
+    static let mapViewLastRegion = "Map View Last Region"
     
 }
