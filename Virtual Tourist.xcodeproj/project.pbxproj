@@ -13,6 +13,8 @@
 		98AA7B0F22031C8D00FCA5AC /* Virtual Tourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B0D22031C8D00FCA5AC /* Virtual Tourist.xcdatamodeld */; };
 		98AA7B1122031C8F00FCA5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AA7B1022031C8F00FCA5AC /* Assets.xcassets */; };
 		98AA7B1422031C8F00FCA5AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98AA7B1222031C8F00FCA5AC /* LaunchScreen.storyboard */; };
+		98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */; };
+		98AA7B2722036A4200FCA5AC /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B2622036A4200FCA5AC /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		98AA7B1022031C8F00FCA5AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98AA7B1322031C8F00FCA5AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98AA7B1522031C8F00FCA5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		98AA7B2622036A4200FCA5AC /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			children = (
 				98AA7B1022031C8F00FCA5AC /* Assets.xcassets */,
 				98AA7B1522031C8F00FCA5AC /* Info.plist */,
+				98AA7B2622036A4200FCA5AC /* UserDefaultsKeys.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		98AA7B22220320A400FCA5AC /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -210,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */,
 				98AA7B0922031C8D00FCA5AC /* MapViewController.swift in Sources */,
+				98AA7B2722036A4200FCA5AC /* UserDefaultsKeys.swift in Sources */,
 				98AA7B0F22031C8D00FCA5AC /* Virtual Tourist.xcdatamodeld in Sources */,
 				98AA7B0722031C8D00FCA5AC /* AppDelegate.swift in Sources */,
 			);
