@@ -31,6 +31,7 @@ class MapViewController: UIViewController {
         
         // Subscribe to app events to save the map's region.
         NotificationCenter.default.addObserver(self, selector: #selector(persistMapRegion), name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(persistMapRegion), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         setupUserTrackingButton()
         restoreMapRegion()
@@ -49,6 +50,7 @@ class MapViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     // MARK: - Helper Methods
