@@ -25,4 +25,24 @@ extension MapViewController: MKMapViewDelegate {
             UserDefaults.standard.set(mode.rawValue, forKey: UserDefaultsKeys.userTrackingMode)
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseIdentifier = "LocationMarker"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKMarkerAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        annotationView!.animatesWhenAdded = true
+        annotationView!.clusteringIdentifier = nil
+        annotationView!.canShowCallout = true
+        annotationView!.markerTintColor = UIColor(named: "Primary Yellow")!
+        annotationView!.glyphImage = UIImage(named: "Camera")!
+        annotationView!.glyphTintColor = .black
+        
+        return annotationView
+    }
 }

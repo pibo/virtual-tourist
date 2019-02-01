@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkIfFirstLaunch()
         return true
     }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        DataController.shared.load()
+        return true
+    }
 
     func applicationWillTerminate(_ application: UIApplication) {
         saveContext()

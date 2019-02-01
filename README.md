@@ -10,6 +10,13 @@ No desenvolvimento deste app foram aprendidos os seguintes conceitos:
 * Alteração da localização do mapa com `setRegion`
 * Localização do usuário com `MKUserTrackingBarButtonItem` e `CLLocationManager().requestWhenInUseAuthorization`
 * Notificações disparadas no life cycle do app, como `UIApplication.willTerminateNotification`
+* Criação de um view controller estilo alert (para exibir o onboarding)
+* Utilização de um `DataController` para acessar um `NSPersistentContainer`
+* Criação de entidades do `Core Data`
+* Gestos personalizados no `MapView`
+* Geocode reverso com `CLGeocoder` para encontrar nome do local conforme coordenada
+* Uso do `NSFetchedResultsController` e `NSFetchedResultsControllerDelegate` para separação de model/view
+
 
 ### Instalação
 

@@ -17,6 +17,9 @@
 		98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */; };
 		98AA7B2722036A4200FCA5AC /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B2622036A4200FCA5AC /* UserDefaultsKeys.swift */; };
 		98B89A732204893C00913942 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A722204893C00913942 /* DataController.swift */; };
+		98B89A762204C4C600913942 /* Location+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A752204C4C600913942 /* Location+Extensions.swift */; };
+		98B89A782204C79000913942 /* LocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A772204C79000913942 /* LocationMarker.swift */; };
+		98B89A7A2204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A792204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		98AA7B2622036A4200FCA5AC /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		98B89A722204893C00913942 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		98B89A752204C4C600913942 /* Location+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extensions.swift"; sourceTree = "<group>"; };
+		98B89A772204C79000913942 /* LocationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarker.swift; sourceTree = "<group>"; };
+		98B89A792204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		98AA7B1C22031F8300FCA5AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				98B89A742204C4B000913942 /* Managed Objects Extensions */,
 				98AA7B0D22031C8D00FCA5AC /* Virtual Tourist.xcdatamodeld */,
 				98B89A722204893C00913942 /* DataController.swift */,
 			);
@@ -97,6 +104,7 @@
 		98AA7B1D22031F8B00FCA5AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				98B89A772204C79000913942 /* LocationMarker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				98AA7B242203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift */,
+				98B89A792204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -149,6 +158,14 @@
 				98AA7B1222031C8F00FCA5AC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		98B89A742204C4B000913942 /* Managed Objects Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98B89A752204C4C600913942 /* Location+Extensions.swift */,
+			);
+			path = "Managed Objects Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B89A762204C4C600913942 /* Location+Extensions.swift in Sources */,
 				98B89A732204893C00913942 /* DataController.swift in Sources */,
+				98B89A7A2204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
+				98B89A782204C79000913942 /* LocationMarker.swift in Sources */,
 				98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */,
 				9850510A2203AB040059B2E1 /* OnboardingViewController.swift in Sources */,
 				98AA7B0922031C8D00FCA5AC /* MapViewController.swift in Sources */,

@@ -9,12 +9,15 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class MapViewController: UIViewController {
     
     // MARK: - Properties
     
+    let mapLongPressMinimumDuration: TimeInterval = 0.8
     let onboardingTimeout: TimeInterval = 1.5
+    var fetchedResultsController: NSFetchedResultsController<Location>!
     lazy var locationManager: CLLocationManager = CLLocationManager()
 
     // MARK: - Outlets
@@ -34,13 +37,19 @@ class MapViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(persistMapRegion), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         setupUserTrackingButton()
+        
         restoreMapRegion()
         
+        // Show onboarding if the app is being launched for the first time.
         if let app = (UIApplication.shared.delegate as? AppDelegate), app.firstLaunch {
             DispatchQueue.main.asyncAfter(deadline: .now() + onboardingTimeout) {
                 self.showOnboarding()
             }
         }
+        
+        subscribeMapToLongPress()
+        
+        setupFetchedResultsController()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +66,29 @@ class MapViewController: UIViewController {
     
     func setupUserTrackingButton() {
         navigationItem.rightBarButtonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+    }
+    
+    func setupFetchedResultsController() {
+        let request: NSFetchRequest<Location> = Location.fetchRequest()
+        let byDate = NSSortDescriptor(key: "createdAt", ascending: false)
+        
+        request.sortDescriptors = [byDate]
+        
+        fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: DataController.shared.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+            createAnnotations()
+        } catch {
+            fatalError("The saved locations couldn't be loaded: \(error.localizedDescription)")
+        }
     }
     
     @objc func persistMapRegion() {
@@ -95,5 +127,49 @@ class MapViewController: UIViewController {
         onboarding.modalTransitionStyle = .crossDissolve
         
         present(onboarding, animated: true, completion: nil)
+    }
+    
+    func subscribeMapToLongPress() {
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(newLocation))
+        gestureRecognizer.minimumPressDuration = mapLongPressMinimumDuration
+        mapView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func newLocation(gestureRecognizer: UIGestureRecognizer) {
+        guard gestureRecognizer.state == .began else { return }
+        
+        let touchPoint = gestureRecognizer.location(in: mapView)
+        let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            guard error == nil else {
+                print("Reverse geocoder failed with error: \(error!.localizedDescription)")
+                return
+            }
+        
+            let location = Location(context: DataController.shared.viewContext)
+            location.latitude = coordinate.latitude
+            location.longitude = coordinate.longitude
+            
+            if let placemarks = placemarks, placemarks.count > 0 {
+                let placemark = placemarks.first!
+                location.locality = placemark.locality
+                location.subLocality = placemark.subLocality
+            } else {
+                location.locality = "Unknown Location"
+            }
+            
+            try? DataController.shared.viewContext.save()
+        }
+    }
+    
+    func createAnnotations() {
+        let locations: [Location]? = fetchedResultsController.fetchedObjects
+        
+        if let locations = locations {
+            let annotations = locations.map(LocationMarker.init)
+            mapView.addAnnotations(annotations)
+        }
     }
 }
