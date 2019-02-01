@@ -65,7 +65,9 @@ class MapViewController: UIViewController {
     // MARK: - Helper Methods
     
     func setupUserTrackingButton() {
-        navigationItem.rightBarButtonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        let buttomItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        buttomItem.customView?.tintColor = UIColor(named: "Primary Yellow")!
+        navigationItem.rightBarButtonItem = buttomItem
     }
     
     func setupFetchedResultsController() {
