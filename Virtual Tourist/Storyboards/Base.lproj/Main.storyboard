@@ -46,7 +46,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DEi-Jj-SD0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HME-6X-9g7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -229,11 +229,19 @@
                         <viewLayoutGuide key="safeArea" id="u6C-J4-b9Q"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="94m-nX-vHg"/>
                                 <exclude reference="I8j-oe-3pJ"/>
                                 <exclude reference="hNN-hS-Fd1"/>
+                                <exclude reference="4F3-3V-zkR"/>
+                                <exclude reference="5fo-Xb-zsM"/>
+                                <exclude reference="Fb6-k9-7XX"/>
+                                <exclude reference="SNf-0m-bJG"/>
+                                <exclude reference="Sht-zN-wOW"/>
+                                <exclude reference="dAJ-4b-Rws"/>
+                                <exclude reference="gRB-VS-B7M"/>
+                                <exclude reference="rXZ-FZ-hH0"/>
                                 <exclude reference="1rY-MY-8OZ"/>
                                 <exclude reference="3G5-5m-El7"/>
+                                <exclude reference="94m-nX-vHg"/>
                                 <exclude reference="AV4-gM-53l"/>
                                 <exclude reference="Ef5-If-Lqr"/>
                                 <exclude reference="F1P-La-rTh"/>
@@ -244,29 +252,11 @@
                                 <exclude reference="kQF-hu-Rjr"/>
                                 <exclude reference="rbh-GG-5RK"/>
                                 <exclude reference="uzw-aA-Ys5"/>
-                                <exclude reference="4F3-3V-zkR"/>
-                                <exclude reference="5fo-Xb-zsM"/>
-                                <exclude reference="Fb6-k9-7XX"/>
-                                <exclude reference="SNf-0m-bJG"/>
-                                <exclude reference="Sht-zN-wOW"/>
-                                <exclude reference="dAJ-4b-Rws"/>
-                                <exclude reference="gRB-VS-B7M"/>
-                                <exclude reference="rXZ-FZ-hH0"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="94m-nX-vHg"/>
                                 <include reference="I8j-oe-3pJ"/>
-                                <exclude reference="1rY-MY-8OZ"/>
-                                <exclude reference="3G5-5m-El7"/>
-                                <exclude reference="AV4-gM-53l"/>
-                                <exclude reference="Ef5-If-Lqr"/>
-                                <exclude reference="F1P-La-rTh"/>
-                                <include reference="G9X-iW-maF"/>
-                                <exclude reference="YrZ-HO-zAo"/>
-                                <exclude reference="kQF-hu-Rjr"/>
-                                <include reference="uzw-aA-Ys5"/>
                                 <exclude reference="4F3-3V-zkR"/>
                                 <include reference="5fo-Xb-zsM"/>
                                 <exclude reference="Fb6-k9-7XX"/>
@@ -274,20 +264,31 @@
                                 <exclude reference="Sht-zN-wOW"/>
                                 <exclude reference="gRB-VS-B7M"/>
                                 <exclude reference="rXZ-FZ-hH0"/>
+                                <exclude reference="1rY-MY-8OZ"/>
+                                <exclude reference="3G5-5m-El7"/>
+                                <include reference="94m-nX-vHg"/>
+                                <exclude reference="AV4-gM-53l"/>
+                                <exclude reference="Ef5-If-Lqr"/>
+                                <exclude reference="F1P-La-rTh"/>
+                                <include reference="G9X-iW-maF"/>
+                                <exclude reference="YrZ-HO-zAo"/>
+                                <exclude reference="kQF-hu-Rjr"/>
+                                <include reference="uzw-aA-Ys5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="hNN-hS-Fd1"/>
+                                <include reference="dAJ-4b-Rws"/>
                                 <include reference="Ibx-R3-jHh"/>
                                 <include reference="eR3-4X-vXg"/>
                                 <include reference="rbh-GG-5RK"/>
-                                <include reference="dAJ-4b-Rws"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="button" destination="CAg-PM-yKb" id="4Es-is-QnT"/>
+                        <outlet property="tourist" destination="xZm-Is-87j" id="9H0-Rk-hh5"/>
                         <outlet property="wrapper" destination="rX2-gP-t4N" id="5Dh-Xg-TEh"/>
                     </connections>
                 </viewController>

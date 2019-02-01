@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     
     // MARK: - Properties
     
+    let onboardingTimeout: TimeInterval = 1.5
     lazy var locationManager: CLLocationManager = CLLocationManager()
 
     // MARK: - Outlets
@@ -33,6 +34,12 @@ class MapViewController: UIViewController {
         
         setupUserTrackingButton()
         restoreMapRegion()
+        
+        if let app = (UIApplication.shared.delegate as? AppDelegate), app.firstLaunch {
+            DispatchQueue.main.asyncAfter(deadline: .now() + onboardingTimeout) {
+                self.showOnboarding()
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,5 +83,15 @@ class MapViewController: UIViewController {
             
             mapView.setRegion(region, animated: false)
         }
+    }
+    
+    func showOnboarding() {
+        let onboarding = storyboard!.instantiateViewController(withIdentifier: "OnboardingScene") as! OnboardingViewController
+        onboarding.providesPresentationContextTransitionStyle = true
+        onboarding.definesPresentationContext = true
+        onboarding.modalPresentationStyle = .overCurrentContext
+        onboarding.modalTransitionStyle = .crossDissolve
+        
+        present(onboarding, animated: true, completion: nil)
     }
 }

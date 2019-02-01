@@ -10,7 +10,7 @@ import Foundation
 
 struct UserDefaultsKeys {
     
+    static let firstLaunch = "First Launch"
     static let userTrackingMode = "User Tracking Mode"
     static let mapViewLastRegion = "Map View Last Region"
-    
 }
