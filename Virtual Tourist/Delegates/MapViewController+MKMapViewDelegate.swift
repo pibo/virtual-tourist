@@ -40,7 +40,7 @@ extension MapViewController: MKMapViewDelegate {
         annotationView!.clusteringIdentifier = nil
         annotationView!.canShowCallout = true
         annotationView!.markerTintColor = UIColor(named: "Primary Yellow")!
-        annotationView!.glyphImage = UIImage(named: "Camera")!
+        annotationView!.glyphImage = UIImage(named: "Album (marker)")!
         annotationView!.glyphTintColor = .black
         
         return annotationView
