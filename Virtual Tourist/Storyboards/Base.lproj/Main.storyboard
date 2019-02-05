@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DEi-Jj-SD0">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uu8-rT-WwM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,7 +46,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DEi-Jj-SD0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HME-6X-9g7">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -63,30 +63,30 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingScene" id="yXg-9u-cs2" customClass="OnboardingViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKJ-yN-91O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rX2-gP-t4N" userLabel="Wrapper">
-                                <rect key="frame" x="32" y="147" width="256" height="282"/>
+                                <rect key="frame" x="110.33333333333331" y="204" width="515.33333333333348" height="178"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-it-OUS">
-                                        <rect key="frame" x="16" y="32" width="224" height="218"/>
+                                        <rect key="frame" x="32.000000000000028" y="16" width="451.33333333333337" height="146"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Virtual Tourist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1be-hh-Z9a">
-                                                <rect key="frame" x="2" y="0.0" width="220" height="41"/>
+                                                <rect key="frame" x="115.66666666666666" y="0.0" width="219.99999999999997" height="40.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUc-HW-SyE">
-                                                <rect key="frame" x="0.0" y="57" width="224" height="115"/>
+                                                <rect key="frame" x="0.0" y="49.666666666666686" width="451.33333333333331" height="57.333333333333343"/>
                                                 <string key="text">Long-press on the map to create a mark. An album will be created with photos nearby the place. The photos will be downloaded from Flickr and will be available offline.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-PM-yKb">
-                                                <rect key="frame" x="59" y="188" width="106" height="30"/>
+                                                <rect key="frame" x="172.66666666666666" y="116" width="105.99999999999997" height="30"/>
                                                 <state key="normal" title="Start Exploring!"/>
                                                 <connections>
                                                     <action selector="ok:" destination="yXg-9u-cs2" eventType="touchUpInside" id="zoL-2t-TsW"/>
@@ -101,16 +101,26 @@
                                     <constraint firstItem="nuh-it-OUS" firstAttribute="leading" secondItem="rX2-gP-t4N" secondAttribute="leading" constant="32" id="4Nx-9Q-332"/>
                                     <constraint firstItem="nuh-it-OUS" firstAttribute="top" secondItem="rX2-gP-t4N" secondAttribute="top" constant="32" id="4UG-1T-zg8"/>
                                     <constraint firstItem="nuh-it-OUS" firstAttribute="top" secondItem="rX2-gP-t4N" secondAttribute="top" constant="16" id="HG5-oc-DKO"/>
-                                    <constraint firstAttribute="trailing" secondItem="nuh-it-OUS" secondAttribute="trailing" constant="16" id="QEK-q3-OFU"/>
-                                    <constraint firstItem="nuh-it-OUS" firstAttribute="leading" secondItem="rX2-gP-t4N" secondAttribute="leading" constant="16" id="UU1-8H-eIB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nuh-it-OUS" secondAttribute="trailing" constant="16" id="QEK-q3-OFU">
+                                        <variation key="heightClass=compact" constant="32"/>
+                                    </constraint>
+                                    <constraint firstItem="nuh-it-OUS" firstAttribute="leading" secondItem="rX2-gP-t4N" secondAttribute="leading" constant="16" id="UU1-8H-eIB">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="nuh-it-OUS" secondAttribute="trailing" constant="32" id="d7F-pX-6Sz"/>
-                                    <constraint firstAttribute="trailing" secondItem="nuh-it-OUS" secondAttribute="trailing" constant="16" id="hFU-CG-Mrz"/>
-                                    <constraint firstItem="nuh-it-OUS" firstAttribute="leading" secondItem="rX2-gP-t4N" secondAttribute="leading" constant="16" id="tYz-V7-Xng"/>
+                                    <constraint firstAttribute="trailing" secondItem="nuh-it-OUS" secondAttribute="trailing" constant="16" id="hFU-CG-Mrz">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                    </constraint>
+                                    <constraint firstItem="nuh-it-OUS" firstAttribute="leading" secondItem="rX2-gP-t4N" secondAttribute="leading" constant="16" id="tYz-V7-Xng">
+                                        <variation key="heightClass=compact" constant="32"/>
+                                    </constraint>
                                     <constraint firstItem="nuh-it-OUS" firstAttribute="top" secondItem="rX2-gP-t4N" secondAttribute="top" constant="16" id="u3p-qW-tKe"/>
                                     <constraint firstAttribute="bottom" secondItem="nuh-it-OUS" secondAttribute="bottom" constant="16" id="vu0-uW-neU">
                                         <variation key="heightClass=compact" constant="16"/>
                                     </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="nuh-it-OUS" secondAttribute="bottom" constant="32" id="xPm-91-tcR"/>
+                                    <constraint firstAttribute="bottom" secondItem="nuh-it-OUS" secondAttribute="bottom" constant="32" id="xPm-91-tcR">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -148,7 +158,7 @@
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="Tourist" translatesAutoresizingMaskIntoConstraints="NO" id="xZm-Is-87j">
-                                <rect key="frame" x="96" y="35" width="128" height="128"/>
+                                <rect key="frame" x="268" y="16" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xZm-Is-87j" secondAttribute="height" multiplier="1:1" id="AEQ-1M-7G6"/>
                                     <constraint firstAttribute="width" secondItem="xZm-Is-87j" secondAttribute="height" multiplier="1:1" id="KDL-RN-0RU"/>
@@ -214,9 +224,13 @@
                                 <variation key="heightClass=compact" constant="-48"/>
                             </constraint>
                             <constraint firstItem="xZm-Is-87j" firstAttribute="centerX" secondItem="KKJ-yN-91O" secondAttribute="centerX" id="dAJ-4b-Rws"/>
-                            <constraint firstItem="rX2-gP-t4N" firstAttribute="leading" secondItem="u6C-J4-b9Q" secondAttribute="leading" constant="32" id="eR3-4X-vXg"/>
+                            <constraint firstItem="rX2-gP-t4N" firstAttribute="leading" secondItem="u6C-J4-b9Q" secondAttribute="leading" constant="32" id="eR3-4X-vXg">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="xZm-Is-87j" firstAttribute="centerX" secondItem="KKJ-yN-91O" secondAttribute="centerX" id="gRB-VS-B7M"/>
-                            <constraint firstItem="u6C-J4-b9Q" firstAttribute="trailing" secondItem="rX2-gP-t4N" secondAttribute="trailing" constant="32" id="hNN-hS-Fd1"/>
+                            <constraint firstItem="u6C-J4-b9Q" firstAttribute="trailing" secondItem="rX2-gP-t4N" secondAttribute="trailing" constant="32" id="hNN-hS-Fd1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="rX2-gP-t4N" firstAttribute="top" secondItem="xZm-Is-87j" secondAttribute="bottom" constant="16" id="kQF-hu-Rjr">
                                 <variation key="heightClass=compact" constant="-16"/>
                             </constraint>
@@ -224,7 +238,7 @@
                             <constraint firstItem="rX2-gP-t4N" firstAttribute="centerY" secondItem="KKJ-yN-91O" secondAttribute="centerY" id="rbh-GG-5RK">
                                 <variation key="heightClass=regular-widthClass=compact" constant="48"/>
                             </constraint>
-                            <constraint firstItem="rX2-gP-t4N" firstAttribute="width" secondItem="u6C-J4-b9Q" secondAttribute="width" multiplier="0.6" id="uzw-aA-Ys5"/>
+                            <constraint firstItem="rX2-gP-t4N" firstAttribute="width" secondItem="u6C-J4-b9Q" secondAttribute="width" multiplier="0.7" id="uzw-aA-Ys5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u6C-J4-b9Q"/>
                         <variation key="default">
