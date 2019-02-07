@@ -14,13 +14,20 @@ extension MapViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         let location = anObject as! Location
         switch type {
+            
         case .insert:
             let annotation = LocationAnnotation(location)
+            mapView.deselectAnnotation(mapView.selectedAnnotations.first, animated: true)
             mapView.addAnnotation(annotation)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                self.mapView.selectAnnotation(annotation, animated: true)
+            }
+            
         case .delete:
             if let annotation = getAnnotation(for: location) {
                 mapView.removeAnnotation(annotation)
             }
+            
         default: break
         }
     }
