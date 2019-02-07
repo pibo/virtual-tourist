@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		983A83F42209C20800533E9A /* DetailCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983A83F32209C20800533E9A /* DetailCalloutView.swift */; };
 		9850510A2203AB040059B2E1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985051092203AB040059B2E1 /* OnboardingViewController.swift */; };
 		98AA7B0722031C8D00FCA5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B0622031C8D00FCA5AC /* AppDelegate.swift */; };
 		98AA7B0922031C8D00FCA5AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B0822031C8D00FCA5AC /* MapViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		983A83F32209C20800533E9A /* DetailCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCalloutView.swift; sourceTree = "<group>"; };
 		985051092203AB040059B2E1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		98AA7B0322031C8D00FCA5AC /* Virtual Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tourist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AA7B0622031C8D00FCA5AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				98B89A772204C79000913942 /* LocationMarker.swift */,
+				983A83F32209C20800533E9A /* DetailCalloutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				98AA7B0922031C8D00FCA5AC /* MapViewController.swift in Sources */,
 				98AA7B2722036A4200FCA5AC /* UserDefaultsKeys.swift in Sources */,
 				98AA7B0F22031C8D00FCA5AC /* Virtual Tourist.xcdatamodeld in Sources */,
+				983A83F42209C20800533E9A /* DetailCalloutView.swift in Sources */,
 				98AA7B0722031C8D00FCA5AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

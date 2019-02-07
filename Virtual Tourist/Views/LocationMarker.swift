@@ -17,8 +17,8 @@ class LocationMarker: NSObject, MKAnnotation {
     let location: Location
     
     init(_ location: Location) {
-        title = location.subLocality ?? location.locality
-        subtitle = location.subLocality != nil ? location.locality : nil
+        title = location.title
+        subtitle = location.country
         coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         self.location = location
     }

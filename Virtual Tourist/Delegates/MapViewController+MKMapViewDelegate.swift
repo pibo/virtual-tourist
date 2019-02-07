@@ -43,6 +43,10 @@ extension MapViewController: MKMapViewDelegate {
         annotationView!.glyphImage = UIImage(named: "Album (marker)")!
         annotationView!.glyphTintColor = .black
         
+        detailCallout.subtitleLabel.text = annotation.subtitle!
+        detailCallout.setPhotoCount(0)
+        annotationView!.detailCalloutAccessoryView = detailCallout
+        
         return annotationView
     }
 }

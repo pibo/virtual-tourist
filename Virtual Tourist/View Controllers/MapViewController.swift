@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var detailCallout: DetailCalloutView!
     
     // MARK: - Life Cycle Methods
     
@@ -156,10 +157,11 @@ class MapViewController: UIViewController {
             
             if let placemarks = placemarks, placemarks.count > 0 {
                 let placemark = placemarks.first!
-                location.locality = placemark.locality
-                location.subLocality = placemark.subLocality
+                location.title = placemark.locality ?? placemark.subLocality
+                location.country = placemark.country
             } else {
-                location.locality = "Unknown Location"
+                location.title = "Unknown Location"
+                location.country = "Unknown"
             }
             
             try? DataController.shared.viewContext.save()

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DEi-Jj-SD0">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uu8-rT-WwM">
-                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,10 +34,96 @@
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="IhL-6M-mzQ"/>
                     <connections>
+                        <outlet property="detailCallout" destination="ocH-S1-3mn" id="fIA-TX-Dso"/>
                         <outlet property="mapView" destination="Uu8-rT-WwM" id="BPD-5Q-mMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ocH-S1-3mn" userLabel="Detail Callout" customClass="DetailCalloutView" customModule="Virtual_Tourist" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="165" height="84"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZS-WP-DvV">
+                            <rect key="frame" x="0.0" y="0.0" width="165" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r7m-63-DAG">
+                            <rect key="frame" x="0.0" y="24" width="165" height="16"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Album (button)" translatesAutoresizingMaskIntoConstraints="NO" id="D2Y-w3-QAP">
+                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="abe-Vz-JiK"/>
+                                        <constraint firstAttribute="width" constant="16" id="eKP-rQ-Jur"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 photos in this album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-9b-6Vf">
+                                    <rect key="frame" x="20" y="0.0" width="145" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9D8-Mp-H6u" userLabel="Buttons">
+                            <rect key="frame" x="0.0" y="48" width="165" height="36"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-MS-pxa">
+                                    <rect key="frame" x="0.0" y="8" width="0.0" height="28"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" id="r9G-ID-BZ5"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjE-dX-JZr">
+                                    <rect key="frame" x="20.5" y="8" width="49" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="VzK-IH-UcF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="tintColor" name="Primary Red"/>
+                                    <inset key="contentEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="titleEdgeInsets" minX="-8" minY="18" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="13" minY="-12" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Delete" image="Trash">
+                                        <color key="titleColor" name="Primary Red"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwD-Ox-ARC">
+                                    <rect key="frame" x="89.5" y="8" width="55" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="wKB-J0-KkQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="tintColor" name="Primary Yellow"/>
+                                    <inset key="titleEdgeInsets" minX="-14" minY="19" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="12" minY="-12" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Album" image="Album (button)">
+                                        <color key="titleColor" name="Primary Yellow"/>
+                                    </state>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGq-n0-b8N">
+                                    <rect key="frame" x="165" y="8" width="0.0" height="28"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" id="vad-IH-rYO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="165" id="fA4-km-cQT"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="zvZ-0w-J0t"/>
+                    <connections>
+                        <outlet property="photoCount" destination="r7m-63-DAG" id="IdB-rE-nar"/>
+                        <outlet property="photoCountLabel" destination="kqJ-9b-6Vf" id="2at-Dl-uie"/>
+                        <outlet property="subtitleLabel" destination="SZS-WP-DvV" id="PPb-Gl-KHt"/>
+                    </connections>
+                </stackView>
             </objects>
             <point key="canvasLocation" x="982" y="-564"/>
         </scene>
@@ -46,7 +133,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DEi-Jj-SD0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HME-6X-9g7">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -63,30 +150,30 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingScene" id="yXg-9u-cs2" customClass="OnboardingViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKJ-yN-91O">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rX2-gP-t4N" userLabel="Wrapper">
-                                <rect key="frame" x="110.33333333333331" y="204" width="515.33333333333348" height="178"/>
+                                <rect key="frame" x="16" y="199" width="288" height="266"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-it-OUS">
-                                        <rect key="frame" x="32.000000000000028" y="16" width="451.33333333333337" height="146"/>
+                                        <rect key="frame" x="32" y="32" width="224" height="218"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Virtual Tourist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1be-hh-Z9a">
-                                                <rect key="frame" x="115.66666666666666" y="0.0" width="219.99999999999997" height="40.666666666666664"/>
+                                                <rect key="frame" x="2" y="0.0" width="220" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUc-HW-SyE">
-                                                <rect key="frame" x="0.0" y="49.666666666666686" width="451.33333333333331" height="57.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="57" width="224" height="115"/>
                                                 <string key="text">Long-press on the map to create a mark. An album will be created with photos nearby the place. The photos will be downloaded from Flickr and will be available offline.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAg-PM-yKb">
-                                                <rect key="frame" x="172.66666666666666" y="116" width="105.99999999999997" height="30"/>
+                                                <rect key="frame" x="59" y="188" width="106" height="30"/>
                                                 <state key="normal" title="Start Exploring!"/>
                                                 <connections>
                                                     <action selector="ok:" destination="yXg-9u-cs2" eventType="touchUpInside" id="zoL-2t-TsW"/>
@@ -158,7 +245,7 @@
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="Tourist" translatesAutoresizingMaskIntoConstraints="NO" id="xZm-Is-87j">
-                                <rect key="frame" x="268" y="16" width="200" height="200"/>
+                                <rect key="frame" x="96" y="87" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xZm-Is-87j" secondAttribute="height" multiplier="1:1" id="AEQ-1M-7G6"/>
                                     <constraint firstAttribute="width" secondItem="xZm-Is-87j" secondAttribute="height" multiplier="1:1" id="KDL-RN-0RU"/>
@@ -312,6 +399,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Album (button)" width="16" height="16"/>
         <image name="Tourist" width="512" height="512"/>
+        <image name="Trash" width="14.5" height="16"/>
+        <namedColor name="Primary Red">
+            <color red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary Yellow">
+            <color red="0.88627450980392153" green="0.80392156862745101" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

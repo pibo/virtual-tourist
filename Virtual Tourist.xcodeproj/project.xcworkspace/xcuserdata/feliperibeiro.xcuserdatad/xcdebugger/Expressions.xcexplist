@@ -8,6 +8,17 @@
             <PersistentString
                value = "placemark.subLocality">
             </PersistentString>
+            <PersistentString
+               value = "placemark.administrativeArea">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapViewController.mapView(_:viewFor:):MapViewController+MKMapViewDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "annotation.subtitle">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
    </ContextStates>

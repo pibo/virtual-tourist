@@ -17,7 +17,6 @@ No desenvolvimento deste app foram aprendidos os seguintes conceitos:
 * Geocode reverso com `CLGeocoder` para encontrar nome do local conforme coordenada
 * Uso do `NSFetchedResultsController` e `NSFetchedResultsControllerDelegate` para separação de model/view
 
-
 ### Instalação
 
 Basta clonar o repositório e abrir o arquivo de projeto `Virtual Tourist.xcodeproj`.
