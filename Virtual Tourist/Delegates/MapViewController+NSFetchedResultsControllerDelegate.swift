@@ -12,11 +12,15 @@ import CoreData
 extension MapViewController: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        let location = anObject as! Location
         switch type {
         case .insert:
-            let location = anObject as! Location
-            let annotation = LocationMarker(location)
+            let annotation = LocationAnnotation(location)
             mapView.addAnnotation(annotation)
+        case .delete:
+            if let annotation = getAnnotation(for: location) {
+                mapView.removeAnnotation(annotation)
+            }
         default: break
         }
     }

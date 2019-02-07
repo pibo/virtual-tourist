@@ -15,6 +15,8 @@ class DetailCalloutView: UIStackView {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var photoCount: UIStackView!
     @IBOutlet var photoCountLabel: UILabel!
+    @IBOutlet var deleteButton: UIButton!
+    @IBOutlet var albumButton: UIButton!
     
     // MARK: - Helper Methods
     

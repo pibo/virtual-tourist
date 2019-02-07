@@ -119,6 +119,8 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="zvZ-0w-J0t"/>
                     <connections>
+                        <outlet property="albumButton" destination="VwD-Ox-ARC" id="oEy-ck-9K5"/>
+                        <outlet property="deleteButton" destination="vjE-dX-JZr" id="lB2-RE-Hyr"/>
                         <outlet property="photoCount" destination="r7m-63-DAG" id="IdB-rE-nar"/>
                         <outlet property="photoCountLabel" destination="kqJ-9b-6Vf" id="2at-Dl-uie"/>
                         <outlet property="subtitleLabel" destination="SZS-WP-DvV" id="PPb-Gl-KHt"/>

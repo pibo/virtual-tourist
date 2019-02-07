@@ -14,3 +14,7 @@ extension Location {
         createdAt = Date()
     }
 }
+
+func ==<T: Location>(lhs: T, rhs: T) -> Bool {
+    return lhs.objectID == rhs.objectID
+}

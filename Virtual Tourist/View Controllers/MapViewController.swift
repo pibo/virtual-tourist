@@ -19,6 +19,13 @@ class MapViewController: UIViewController {
     let onboardingTimeout: TimeInterval = 1.5
     var fetchedResultsController: NSFetchedResultsController<Location>!
     lazy var locationManager: CLLocationManager = CLLocationManager()
+    
+    // MARK: - Computed Properties
+    
+    var currentLocation: Location? {
+        let annotation = mapView.selectedAnnotations.first as? LocationAnnotation
+        return annotation?.location
+    }
 
     // MARK: - Outlets
     
@@ -172,8 +179,35 @@ class MapViewController: UIViewController {
         let locations: [Location]? = fetchedResultsController.fetchedObjects
         
         if let locations = locations {
-            let annotations = locations.map(LocationMarker.init)
+            let annotations = locations.map(LocationAnnotation.init)
             mapView.addAnnotations(annotations)
         }
+    }
+    
+    func getAnnotation(for location: Location) -> LocationAnnotation? {
+        let annotations = mapView.annotations as! [LocationAnnotation]
+        return annotations.first { $0.location == location }
+    }
+    
+    // MARK: Detail Callout Actions
+    
+    @objc func deleteTapped(_ sender: Any) {
+        guard let currentLocation = currentLocation else { return }
+        
+        let alert = UIAlertController(title: Strings.DeleteLocation.title, message: Strings.DeleteLocation.message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let delete = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            DataController.shared.viewContext.delete(currentLocation)
+            try? DataController.shared.viewContext.save()
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func albumTapped(_ sender: Any) {
+        
     }
 }

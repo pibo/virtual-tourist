@@ -16,6 +16,7 @@ No desenvolvimento deste app foram aprendidos os seguintes conceitos:
 * Gestos personalizados no `MapView`
 * Geocode reverso com `CLGeocoder` para encontrar nome do local conforme coordenada
 * Uso do `NSFetchedResultsController` e `NSFetchedResultsControllerDelegate` para separação de model/view
+* Customização do `detailCalloutView` utilizando um `UIStackView` totalmente customizado
 
 ### Instalação
 

@@ -9,7 +9,7 @@
 import MapKit
 import CoreLocation
 
-class LocationMarker: NSObject, MKAnnotation {
+class LocationAnnotation: NSObject, MKAnnotation {
     
     let title: String?
     let subtitle: String?
@@ -22,8 +22,4 @@ class LocationMarker: NSObject, MKAnnotation {
         coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         self.location = location
     }
-}
-
-func ==<T: Location>(lhs: T, rhs: T) -> Bool {
-    return lhs.objectID == rhs.objectID
 }
