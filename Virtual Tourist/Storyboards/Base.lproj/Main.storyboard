@@ -152,10 +152,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buR-NG-aXT">
+                                <rect key="frame" x="0.0" y="170.5" width="320" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="z2m-h4-pqb"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="buR-NG-aXT" firstAttribute="top" secondItem="uGS-Ql-nxX" secondAttribute="bottom" constant="16" id="9gF-wj-mgp"/>
+                            <constraint firstItem="d28-eH-6qp" firstAttribute="trailing" secondItem="buR-NG-aXT" secondAttribute="trailing" id="Cvo-cw-Ud2"/>
                             <constraint firstItem="eY4-ZV-jhG" firstAttribute="leading" secondItem="d28-eH-6qp" secondAttribute="leading" constant="16" id="QVp-Mh-PeD"/>
+                            <constraint firstItem="buR-NG-aXT" firstAttribute="leading" secondItem="d28-eH-6qp" secondAttribute="leading" id="Z43-2h-RHS"/>
                             <constraint firstItem="uGS-Ql-nxX" firstAttribute="leading" secondItem="d28-eH-6qp" secondAttribute="leading" constant="16" id="hDm-xl-Wxu"/>
                             <constraint firstItem="uGS-Ql-nxX" firstAttribute="top" secondItem="eY4-ZV-jhG" secondAttribute="bottom" id="iyU-Kk-FJO"/>
                             <constraint firstItem="d28-eH-6qp" firstAttribute="trailing" secondItem="eY4-ZV-jhG" secondAttribute="trailing" constant="16" id="mfJ-y3-VVN"/>
@@ -166,6 +175,7 @@
                     </view>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
+                        <outlet property="mapView" destination="buR-NG-aXT" id="CAg-21-kcy"/>
                         <outlet property="subtitleLabel" destination="uGS-Ql-nxX" id="z3p-5s-EGW"/>
                         <outlet property="titleLabel" destination="eY4-ZV-jhG" id="kYU-Ts-GYA"/>
                     </connections>
