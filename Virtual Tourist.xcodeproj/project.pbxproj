@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9834FF7E220C5CD800209B6F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834FF7D220C5CD800209B6F /* Strings.swift */; };
+		9834FF80220C5F5B00209B6F /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9834FF7F220C5F5B00209B6F /* AlbumViewController.swift */; };
 		983A83F42209C20800533E9A /* DetailCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983A83F32209C20800533E9A /* DetailCalloutView.swift */; };
 		9850510A2203AB040059B2E1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985051092203AB040059B2E1 /* OnboardingViewController.swift */; };
 		98AA7B0722031C8D00FCA5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA7B0622031C8D00FCA5AC /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		9834FF7D220C5CD800209B6F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		9834FF7F220C5F5B00209B6F /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		983A83F32209C20800533E9A /* DetailCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCalloutView.swift; sourceTree = "<group>"; };
 		985051092203AB040059B2E1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		98AA7B0322031C8D00FCA5AC /* Virtual Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tourist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			children = (
 				98AA7B0822031C8D00FCA5AC /* MapViewController.swift */,
 				985051092203AB040059B2E1 /* OnboardingViewController.swift */,
+				9834FF7F220C5F5B00209B6F /* AlbumViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				98B89A762204C4C600913942 /* Location+Extensions.swift in Sources */,
 				98B89A732204893C00913942 /* DataController.swift in Sources */,
+				9834FF80220C5F5B00209B6F /* AlbumViewController.swift in Sources */,
 				98B89A7A2204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				98B89A782204C79000913942 /* LocationAnnotation.swift in Sources */,
 				98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */,

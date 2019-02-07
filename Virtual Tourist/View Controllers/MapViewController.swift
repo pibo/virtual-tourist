@@ -65,6 +65,13 @@ class MapViewController: UIViewController {
         persistMapRegion()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowAlbum" {
+            let controller = segue.destination as! AlbumViewController
+            controller.location = currentLocation
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -208,6 +215,6 @@ class MapViewController: UIViewController {
     }
     
     @objc func albumTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "ShowAlbum", sender: self)
     }
 }

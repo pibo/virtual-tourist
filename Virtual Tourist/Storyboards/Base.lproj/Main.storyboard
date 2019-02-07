@@ -32,10 +32,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Virtual Tourist" id="IhL-6M-mzQ"/>
+                    <navigationItem key="navigationItem" title="Virtual Tourist" id="IhL-6M-mzQ">
+                        <barButtonItem key="backBarButtonItem" title="Map" id="07a-Bn-TmG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailCallout" destination="ocH-S1-3mn" id="fIA-TX-Dso"/>
                         <outlet property="mapView" destination="Uu8-rT-WwM" id="BPD-5Q-mMy"/>
+                        <segue destination="2oQ-vA-m96" kind="show" identifier="ShowAlbum" id="z0X-th-ME8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,6 +131,48 @@
                 </stackView>
             </objects>
             <point key="canvasLocation" x="982" y="-564"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="Nip-0x-aBD">
+            <objects>
+                <viewController id="2oQ-vA-m96" customClass="AlbumViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="38e-u3-2dQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY4-ZV-jhG">
+                                <rect key="frame" x="16" y="80" width="288" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGS-Ql-nxX">
+                                <rect key="frame" x="16" y="130.5" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eY4-ZV-jhG" firstAttribute="leading" secondItem="d28-eH-6qp" secondAttribute="leading" constant="16" id="QVp-Mh-PeD"/>
+                            <constraint firstItem="uGS-Ql-nxX" firstAttribute="leading" secondItem="d28-eH-6qp" secondAttribute="leading" constant="16" id="hDm-xl-Wxu"/>
+                            <constraint firstItem="uGS-Ql-nxX" firstAttribute="top" secondItem="eY4-ZV-jhG" secondAttribute="bottom" id="iyU-Kk-FJO"/>
+                            <constraint firstItem="d28-eH-6qp" firstAttribute="trailing" secondItem="eY4-ZV-jhG" secondAttribute="trailing" constant="16" id="mfJ-y3-VVN"/>
+                            <constraint firstItem="d28-eH-6qp" firstAttribute="trailing" secondItem="uGS-Ql-nxX" secondAttribute="trailing" constant="16" id="ou0-6Z-OsB"/>
+                            <constraint firstItem="eY4-ZV-jhG" firstAttribute="top" secondItem="d28-eH-6qp" secondAttribute="top" constant="16" id="xHl-TU-fzL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d28-eH-6qp"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="1000"/>
+                    <connections>
+                        <outlet property="subtitleLabel" destination="uGS-Ql-nxX" id="z3p-5s-EGW"/>
+                        <outlet property="titleLabel" destination="eY4-ZV-jhG" id="kYU-Ts-GYA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wlN-cP-t1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="173-vQ-ncy">
