@@ -196,7 +196,7 @@ class MapViewController: UIViewController {
         return annotations.first { $0.location == location }
     }
     
-    // MARK: Detail Callout Actions
+    // MARK: - Detail Callout Actions
     
     @objc func deleteTapped(_ sender: Any) {
         guard let currentLocation = currentLocation else { return }

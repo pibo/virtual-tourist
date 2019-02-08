@@ -44,13 +44,17 @@ extension MapViewController: MKMapViewDelegate {
         annotationView!.glyphTintColor = .black
         
         // Configure the detail callout view.
-        detailCallout.subtitleLabel.text = annotation.subtitle!
         detailCallout.deleteButton.addTarget(self, action: #selector(deleteTapped(_:)), for: .touchUpInside)
         detailCallout.albumButton.addTarget(self, action: #selector(albumTapped(_:)), for: .touchUpInside)
-        detailCallout.setPhotoCount(0)
         
         annotationView!.detailCalloutAccessoryView = detailCallout
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotation = view.annotation as! LocationAnnotation
+        detailCallout.subtitleLabel.text = annotation.subtitle!
+        detailCallout.setPhotoCount(0)
     }
 }

@@ -21,7 +21,11 @@ class DetailCalloutView: UIStackView {
     // MARK: - Helper Methods
     
     func setPhotoCount(_ count: Int) {
-        photoCount.isHidden = count < 1
+        if count == 0 {
+            photoCountLabel.text = "No photos in this album"
+            return
+        }
+        
         var text = "\(count) "
         text += count == 1 ? "photo" : "photos"
         photoCountLabel.text = "\(text) in this album"
