@@ -30,6 +30,10 @@ extension MapViewController: MKMapViewDelegate {
         let reuseIdentifier = "LocationMarker"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKMarkerAnnotationView
         
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
         } else {
@@ -53,8 +57,18 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        // Disable for the current user location.
+        guard view != mapView.view(for: mapView.userLocation) else { return }
+        
         let annotation = view.annotation as! LocationAnnotation
         detailCallout.subtitleLabel.text = annotation.subtitle!
         detailCallout.setPhotoCount(annotation.location.photos?.count ?? 0)
+    }
+    
+    // Disable callout for the user location.
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        if let view = mapView.view(for: mapView.userLocation) {
+            view.canShowCallout = false
+        }
     }
 }
