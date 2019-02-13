@@ -23,6 +23,9 @@ extension MapViewController: NSFetchedResultsControllerDelegate {
                 self.mapView.selectAnnotation(annotation, animated: true)
             }
             
+        case .update:
+            detailCallout.setPhotoCount(location.photos!.count)
+            
         case .delete:
             if let annotation = getAnnotation(for: location) {
                 mapView.removeAnnotation(annotation)

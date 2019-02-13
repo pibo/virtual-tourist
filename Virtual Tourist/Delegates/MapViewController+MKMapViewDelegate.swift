@@ -55,6 +55,6 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation as! LocationAnnotation
         detailCallout.subtitleLabel.text = annotation.subtitle!
-        detailCallout.setPhotoCount(0)
+        detailCallout.setPhotoCount(annotation.location.photos?.count ?? 0)
     }
 }

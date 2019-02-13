@@ -16,6 +16,7 @@ class AlbumViewController: UIViewController {
     
     let distanceSpan: CLLocationDistance = 20000.0
     let photoCollectionSpacing: CGFloat = 4.0
+    let context = DataController.shared.viewContext
     var fetchedResultsController: NSFetchedResultsController<Photo>!
     var location: Location!
     
@@ -62,10 +63,12 @@ class AlbumViewController: UIViewController {
         
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: request,
-            managedObjectContext: DataController.shared.viewContext,
+            managedObjectContext: self.context,
             sectionNameKeyPath: nil,
             cacheName: nil
         )
+        
+        fetchedResultsController.delegate = self
         
         do {
             try fetchedResultsController.performFetch()
@@ -81,15 +84,14 @@ class AlbumViewController: UIViewController {
                 return
             }
             
-            let context = DataController.shared.viewContext
             response.photos.forEach {
-                let _ = Photo(fromFlickr: $0, location: self.location, context: context)
+                let _ = Photo(fromFlickr: $0, location: self.location, context: self.context)
             }
             
             // Go to the next page.
             self.location.page += 1
             
-            try? context.save()
+            try? self.context.save()
             self.photoCollection.reloadData()
             
             completion()
