@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in static Flickr.search(latitude:longitude:page:completion:):Flickr.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "decoded.page">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in MapViewController.newLocation(gestureRecognizer:):MapViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -31,6 +39,14 @@
       </ContextState>
       <ContextState
          contextName = "MapViewController.mapView(_:didSelect:):MapViewController+MKMapViewDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MapViewController.albumTapped(_:):MapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchedResultsController.fetchedObjects">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
