@@ -11,7 +11,7 @@ import MapKit
 extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,10 +33,17 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
+    // Determine header size depending if there are photos or not.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let height: CGFloat = photos.count > 0 ? 400.0 : 512.0
+        return CGSize(width: collectionView.bounds.width, height: height)
+    }
+    
     func configure(header view: PhotoLocationHeaderView) -> PhotoLocationHeaderView {
         view.titleLabel.text = location.title
         view.subtitleLabel.text = location.country
         view.mapView.delegate = self
+        view.hasPhotos(photos.count > 0)
         
         let _ = configure(map: view.mapView)
         

@@ -31,7 +31,7 @@ extension Flickr {
         var format = "json"
         var noJSONCallback = "1"
         var safeSearch = "1"
-        var extras = "url_c"
+        var extras = "url_m"
         var page = "1"
         var perPage = "30"
         

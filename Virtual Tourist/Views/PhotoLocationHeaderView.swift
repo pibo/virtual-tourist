@@ -16,4 +16,15 @@ class PhotoLocationHeaderView: UICollectionReusableView {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var noPhotosAvailableLabel: UILabel!
+    @IBOutlet var distanceFromMapToLabel: NSLayoutConstraint!
+    @IBOutlet var distanceFromMapToPhotos: NSLayoutConstraint!
+
+    // MARK: - Helper Methods
+
+    func hasPhotos(_ has: Bool) {
+        noPhotosAvailableLabel.isHidden = has
+        distanceFromMapToPhotos.isActive = has
+        distanceFromMapToLabel.isActive = !has
+    }
 }

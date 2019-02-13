@@ -3,21 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in static Flickr.search(latitude:longitude:page:completion:):Flickr.swift">
+         contextName = "MapViewController.mapView(_:didSelect:):MapViewController+MKMapViewDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MapViewController.albumTapped(_:):MapViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "decoded.page">
+               value = "fetchedResultsController.fetchedObjects">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in MapViewController.newLocation(gestureRecognizer:):MapViewController.swift">
+         contextName = "closure #1 in static Flickr.search(latitude:longitude:page:completion:):Flickr.swift">
          <PersistentStrings>
             <PersistentString
-               value = "placemark.subLocality">
-            </PersistentString>
-            <PersistentString
-               value = "placemark.administrativeArea">
+               value = "decoded.page">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,6 +30,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AlbumViewController.configure(header:):AlbumViewController+UICollectionViewDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "photoCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MapViewController.mapView(_:viewFor:):MapViewController+MKMapViewDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -38,13 +46,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MapViewController.mapView(_:didSelect:):MapViewController+MKMapViewDelegate.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MapViewController.albumTapped(_:):MapViewController.swift">
+         contextName = "closure #1 in MapViewController.newLocation(gestureRecognizer:):MapViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fetchedResultsController.fetchedObjects">
+               value = "placemark.subLocality">
+            </PersistentString>
+            <PersistentString
+               value = "placemark.administrativeArea">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -40,7 +40,10 @@ class Flickr {
         
         let _ = get(request.url) { data, error in
             guard error == nil else {
-                completion(nil, error)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                
                 return
             }
             
