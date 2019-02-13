@@ -14,7 +14,7 @@ struct FlickrPhoto: Decodable {
     
     let id: Int
     let title: String?
-    let url: String
+    let url: URL?
     let width: Int
     let height: Int
     
@@ -25,7 +25,7 @@ struct FlickrPhoto: Decodable {
         
         id = Int(try container.decode(String.self, forKey: .id))!
         title = try container.decodeIfPresent(String.self, forKey: .title)
-        url = try container.decode(String.self, forKey: .url)
+        url = URL(string: try container.decode(String.self, forKey: .url))
         
         do {
             width = try container.decode(Int.self, forKey: .width)

@@ -6,6 +6,14 @@
          contextName = "MapViewController.mapView(_:didSelect:):MapViewController+MKMapViewDelegate.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #2 in AlbumViewController.downloadImagesInBackground():AlbumViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "backgroundPhoto.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MapViewController.albumTapped(_:):MapViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -18,6 +26,14 @@
          <PersistentStrings>
             <PersistentString
                value = "decoded.page">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumViewController.collectionView(_:numberOfItemsInSection:):AlbumViewController+UICollectionViewDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "photos.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

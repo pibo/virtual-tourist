@@ -94,7 +94,22 @@ class AlbumViewController: UIViewController {
             try? self.context.save()
             self.photoCollection.reloadData()
             
+            self.downloadImagesInBackground()
+            
             completion()
+        }
+    }
+    
+    func downloadImagesInBackground() {
+        let noImage: (Photo) -> Bool = { $0.image == nil }
+        photos.filter(noImage).forEach { photo in
+            DataController.shared.persistentContainer.performBackgroundTask { context in
+                let backgroundPhoto = context.object(with: photo.objectID) as! Photo
+                if let image = try? Data(contentsOf: backgroundPhoto.url!) {
+                    backgroundPhoto.image = image
+                    try? context.save()
+                }
+            }
         }
     }
 }

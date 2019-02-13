@@ -16,9 +16,16 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
+        let photo = fetchedResultsController.object(at: indexPath)
         
-        cell.photoImageView.isHidden = true
-        cell.placeholderImage.isHidden = false
+        if let image = photo.image {
+            cell.photoImageView.image = UIImage(data: image)
+            cell.photoImageView.isHidden = false
+            cell.placeholderImage.isHidden = true
+        } else {
+            cell.photoImageView.isHidden = true
+            cell.placeholderImage.isHidden = false
+        }
         
         return cell
     }
