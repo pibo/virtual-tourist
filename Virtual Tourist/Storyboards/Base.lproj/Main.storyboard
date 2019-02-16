@@ -268,10 +268,19 @@
                         <viewLayoutGuide key="safeArea" id="d28-eH-6qp"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="912-1P-DOz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="pkU-Ph-8Tk">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <connections>
+                                <action selector="refresh:" destination="2oQ-vA-m96" id="wWv-hQ-H9e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="FnW-ox-LQl" id="vTN-59-HUe"/>
                         <outlet property="photoCollection" destination="6HU-jZ-6gM" id="xzw-4T-j3o"/>
+                        <outlet property="refreshButtonItem" destination="pkU-Ph-8Tk" id="wUd-pW-1AT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlN-cP-t1b" userLabel="First Responder" sceneMemberID="firstResponder"/>

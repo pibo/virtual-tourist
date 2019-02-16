@@ -17,9 +17,16 @@ class AlbumViewController: UIViewController {
     let distanceSpan: CLLocationDistance = 20000.0
     let photoCollectionSpacing: CGFloat = 4.0
     let context = DataController.shared.viewContext
+    let activityIndicatorButtonItem: UIBarButtonItem = {
+        var activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        activityIndicator.color = UIColor(named: "Primary Yellow")!
+        activityIndicator.startAnimating()
+        
+        return UIBarButtonItem(customView: activityIndicator)
+    }()
+    
     var fetchedResultsController: NSFetchedResultsController<Photo>!
     var location: Location!
-    
     var isLoading: Bool = false {
         didSet {
             activityIndicator.isHidden = !isLoading
@@ -37,6 +44,7 @@ class AlbumViewController: UIViewController {
     
     @IBOutlet var photoCollection: UICollectionView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var refreshButtonItem: UIBarButtonItem!
     
     // MARK: - Life Cycle Methods
     
@@ -84,11 +92,13 @@ class AlbumViewController: UIViewController {
                 return
             }
             
+            self.deleteCurrentAlbum()
+            
             response.photos.forEach {
                 let _ = Photo(fromFlickr: $0, location: self.location, context: self.context)
             }
             
-            // Go to the next page.
+            // Increase the location page to grab fresh photos from Flickr's next page.
             self.location.page += 1
             
             try? self.context.save()
@@ -110,6 +120,22 @@ class AlbumViewController: UIViewController {
                     try? context.save()
                 }
             }
+        }
+    }
+    
+    func deleteCurrentAlbum() {
+        photos.forEach { context.delete($0) }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func refresh(_ sender: Any) {
+        var rightBarButtonItems = navigationItem.rightBarButtonItems!.replacing(refreshButtonItem, with: activityIndicatorButtonItem)
+        navigationItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
+        
+        refresh {
+            rightBarButtonItems = self.navigationItem.rightBarButtonItems!.replacing(self.activityIndicatorButtonItem, with: self.refreshButtonItem)
+            self.navigationItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
         }
     }
 }

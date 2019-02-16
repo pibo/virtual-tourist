@@ -35,6 +35,7 @@
 		98B89A762204C4C600913942 /* Location+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A752204C4C600913942 /* Location+Extensions.swift */; };
 		98B89A782204C79000913942 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A772204C79000913942 /* LocationAnnotation.swift */; };
 		98B89A7A2204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B89A792204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift */; };
+		98CD71332218A402001AEF1D /* Array+Replacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CD71322218A402001AEF1D /* Array+Replacing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		98B89A752204C4C600913942 /* Location+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extensions.swift"; sourceTree = "<group>"; };
 		98B89A772204C79000913942 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		98B89A792204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		98CD71322218A402001AEF1D /* Array+Replacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Replacing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				98AA7B22220320A400FCA5AC /* Delegates */,
 				98AA7B1E2203201400FCA5AC /* Flickr */,
 				98AA7B212203203D00FCA5AC /* Resources */,
+				98CD71312218A3E2001AEF1D /* Extensions */,
 				98AA7B23220320B800FCA5AC /* Storyboards */,
 				98AA7B0622031C8D00FCA5AC /* AppDelegate.swift */,
 			);
@@ -213,6 +216,14 @@
 			path = "Managed Objects Extensions";
 			sourceTree = "<group>";
 		};
+		98CD71312218A3E2001AEF1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98CD71322218A402001AEF1D /* Array+Replacing.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +302,7 @@
 				9834FF80220C5F5B00209B6F /* AlbumViewController.swift in Sources */,
 				98B89A7A2204CE0600913942 /* MapViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				983B8B57221447E400096963 /* Photo+Extensions.swift in Sources */,
+				98CD71332218A402001AEF1D /* Array+Replacing.swift in Sources */,
 				98B89A782204C79000913942 /* LocationAnnotation.swift in Sources */,
 				98AAC2DE22132D3D00CC8F97 /* Flickr.swift in Sources */,
 				98AA7B252203668F00FCA5AC /* MapViewController+MKMapViewDelegate.swift in Sources */,
