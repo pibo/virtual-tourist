@@ -165,18 +165,17 @@ class MapViewController: UIViewController {
                 return
             }
         
+            guard let placemarks = placemarks, placemarks.count > 0 else { return }
+            
+            let placemark = placemarks.first!
+            
+            guard placemark.country != nil, (placemark.locality != nil || placemark.subLocality != nil) else { return }
+            
             let location = Location(context: DataController.shared.viewContext)
             location.latitude = coordinate.latitude
             location.longitude = coordinate.longitude
-            
-            if let placemarks = placemarks, placemarks.count > 0 {
-                let placemark = placemarks.first!
-                location.title = placemark.locality ?? placemark.subLocality
-                location.country = placemark.country
-            } else {
-                location.title = "Unknown Location"
-                location.country = "Unknown"
-            }
+            location.title = placemark.locality ?? placemark.subLocality
+            location.country = placemark.country
             
             try? DataController.shared.viewContext.save()
         }
