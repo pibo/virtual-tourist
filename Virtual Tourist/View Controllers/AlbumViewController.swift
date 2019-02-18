@@ -106,6 +106,11 @@ class AlbumViewController: UIViewController {
             
             self.downloadImagesInBackground()
             
+            // Disable the refresh button if there are no more photos.
+            if self.photos.isEmpty {
+                self.refreshButtonItem.enabled(false)
+            }
+            
             completion()
         }
     }
