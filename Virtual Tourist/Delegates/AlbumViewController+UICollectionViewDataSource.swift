@@ -46,7 +46,7 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         let hasPhoto = cell.photo.image != nil
         
-        return hasPhoto
+        return hasPhoto && isEditing
     }
     
     // Determine header size depending if there are photos or not.

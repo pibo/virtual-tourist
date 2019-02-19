@@ -53,10 +53,23 @@ class AlbumViewController: UIViewController {
         
         setupFetchedResultsController()
         setupPhotoCollection()
+        setupNavigationBar()
         
         if photos.isEmpty {
             isLoading = true
             refresh { self.isLoading = false }
+        }
+    }
+    
+    // MARK: - Overrides
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        if editing {
+            
+        } else {
+            photoCollection.indexPathsForSelectedItems?.forEach { photoCollection.deselectItem(at: $0, animated: true) }
         }
     }
     
@@ -88,6 +101,10 @@ class AlbumViewController: UIViewController {
     
     func setupPhotoCollection() {
         photoCollection.allowsMultipleSelection = true
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.setRightBarButtonItems([editButtonItem, refreshButtonItem], animated: false)
     }
     
     func refresh(completion: @escaping () -> Void) {
