@@ -52,8 +52,9 @@ class AlbumViewController: UIViewController {
         super.viewDidLoad()
         
         setupFetchedResultsController()
+        setupPhotoCollection()
         
-        if photos.count == 0 {
+        if photos.isEmpty {
             isLoading = true
             refresh { self.isLoading = false }
         }
@@ -83,6 +84,10 @@ class AlbumViewController: UIViewController {
         } catch {
             fatalError("The saved locations couldn't be loaded: \(error.localizedDescription)")
         }
+    }
+    
+    func setupPhotoCollection() {
+        photoCollection.allowsMultipleSelection = true
     }
     
     func refresh(completion: @escaping () -> Void) {

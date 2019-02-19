@@ -27,6 +27,8 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.placeholderImage.isHidden = false
         }
         
+        cell.photo = photo
+        
         return cell
     }
     
@@ -38,6 +40,13 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return configure(header: view!)
         default: assert(false, "Invalid element type")
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        let hasPhoto = cell.photo.image != nil
+        
+        return hasPhoto
     }
     
     // Determine header size depending if there are photos or not.
