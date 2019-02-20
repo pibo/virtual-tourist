@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "PhotoDetailsViewController.updateMinZoomScaleForSize(_:):PhotoDetailsViewController+UIScrollViewDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.bounds.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MapViewController.mapView(_:didSelect:):MapViewController+MKMapViewDelegate.swift">
       </ContextState>
       <ContextState
@@ -10,6 +18,17 @@
          <PersistentStrings>
             <PersistentString
                value = "backgroundPhoto.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoDetailsViewController.updateMinZoomScaleForSize(_:):PhotoDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.bounds.width">
+            </PersistentString>
+            <PersistentString
+               value = "size.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

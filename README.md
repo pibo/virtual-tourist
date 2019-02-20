@@ -17,6 +17,13 @@ No desenvolvimento deste app foram aprendidos os seguintes conceitos:
 * Geocode reverso com `CLGeocoder` para encontrar nome do local conforme coordenada
 * Uso do `NSFetchedResultsController` e `NSFetchedResultsControllerDelegate` para separação de model/view
 * Customização do `detailCalloutView` utilizando um `UIStackView` totalmente customizado
+* Uso de um header totalmente customizado dentro da `UICollectionView` com `viewForSupplementaryElementOfKind`
+* Uso de `UICollectionView` com `NSFetchedResultsController`
+* Seleção de células no `UICollectionView`
+* Customização da toolbar e ações dependendo do `isEditing`
+* Tarefas do Core Data em background
+* Zoom em imagem usando `UIScrollView`
+* Manipulação de constraints via outlets
 
 ### Instalação
 

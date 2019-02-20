@@ -72,7 +72,18 @@ class AlbumViewController: UIViewController {
             navigationItem.setRightBarButtonItems([editButtonItem, deleteButtonItem], animated: true)
         } else {
             photoCollection.indexPathsForSelectedItems?.forEach { photoCollection.deselectItem(at: $0, animated: true) }
-            navigationItem.setRightBarButtonItems([editButtonItem, refreshButtonItem], animated: true)
+        }
+        
+        navigationItem.setRightBarButtonItems([editButtonItem, refreshButtonItem], animated: !editing)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowPhotoDetails":
+            let controller = segue.destination as! PhotoDetailsViewController
+            let photo = fetchedResultsController.object(at: sender as! IndexPath)
+            controller.photo = photo
+        default: break
         }
     }
     

@@ -44,8 +44,8 @@ struct FlickrPhoto: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id, title
-        case url = "url_m"
-        case width = "width_m"
-        case height = "height_m"
+        case url = "url_z"
+        case width = "width_z"
+        case height = "height_z"
     }
 }

@@ -279,6 +279,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="912-1P-DOz">
+                        <barButtonItem key="backBarButtonItem" title="Photos" id="Ny9-S0-RcN"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="pkU-Ph-8Tk">
                                 <inset key="imageInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -300,11 +301,57 @@
                         <outlet property="deleteButtonItem" destination="okX-ig-2ba" id="d5t-am-k0x"/>
                         <outlet property="photoCollection" destination="6HU-jZ-6gM" id="xzw-4T-j3o"/>
                         <outlet property="refreshButtonItem" destination="pkU-Ph-8Tk" id="wUd-pW-1AT"/>
+                        <segue destination="1Pz-GN-jRK" kind="show" identifier="ShowPhotoDetails" id="cPB-1u-4hw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlN-cP-t1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808.6956521739132" y="-564.50892857142856"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="467-Ed-5aQ">
+            <objects>
+                <viewController id="1Pz-GN-jRK" customClass="PhotoDetailsViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2V-sr-Vaz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.5" maximumZoomScale="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="DR0-dr-4Nk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujn-qQ-wBc">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ujn-qQ-wBc" firstAttribute="top" secondItem="DR0-dr-4Nk" secondAttribute="top" id="1AS-ZE-eln"/>
+                                    <constraint firstItem="ujn-qQ-wBc" firstAttribute="leading" secondItem="DR0-dr-4Nk" secondAttribute="leading" id="6Jm-nN-9CF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ujn-qQ-wBc" secondAttribute="bottom" id="OVI-mx-ZDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="ujn-qQ-wBc" secondAttribute="trailing" id="lJZ-qM-VHb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DR0-dr-4Nk" firstAttribute="top" secondItem="Dhf-Tf-OB0" secondAttribute="top" id="1wJ-yU-mQp"/>
+                            <constraint firstItem="DR0-dr-4Nk" firstAttribute="trailing" secondItem="Dhf-Tf-OB0" secondAttribute="trailing" id="W42-Gg-LjF"/>
+                            <constraint firstItem="DR0-dr-4Nk" firstAttribute="bottom" secondItem="Dhf-Tf-OB0" secondAttribute="bottom" id="haS-G0-5Q4"/>
+                            <constraint firstItem="DR0-dr-4Nk" firstAttribute="leading" secondItem="Dhf-Tf-OB0" secondAttribute="leading" id="pp3-Ug-i2Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dhf-Tf-OB0"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ujn-qQ-wBc" id="ZVg-Oy-k5D"/>
+                        <outlet property="imageViewBottomConstraint" destination="OVI-mx-ZDS" id="nlr-EK-CUa"/>
+                        <outlet property="imageViewLeadingConstraint" destination="6Jm-nN-9CF" id="rsb-Md-Vih"/>
+                        <outlet property="imageViewTopConstraint" destination="1AS-ZE-eln" id="GjW-rC-10U"/>
+                        <outlet property="imageViewTrailingConstraint" destination="lJZ-qM-VHb" id="4hb-B7-GpI"/>
+                        <outlet property="scrollView" destination="DR0-dr-4Nk" id="ILA-VJ-CML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjd-wl-Ym2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="-565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="173-vQ-ncy">

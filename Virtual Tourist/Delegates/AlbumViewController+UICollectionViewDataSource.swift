@@ -46,11 +46,16 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         let hasPhoto = cell.photo.image != nil
         
-        return hasPhoto && isEditing
+        return hasPhoto
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        deleteButtonItem.enabled(true)
+        if isEditing {
+            deleteButtonItem.enabled(true)
+        } else {
+            collectionView.deselectItem(at: indexPath, animated: false)
+            performSegue(withIdentifier: "ShowPhotoDetails", sender: indexPath)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
