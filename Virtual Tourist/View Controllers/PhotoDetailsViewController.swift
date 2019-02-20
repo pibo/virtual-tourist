@@ -34,12 +34,15 @@ class PhotoDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateMinZoomScaleForSize(view.bounds.size)
+        updateConstraintsForSize(view.bounds.size)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         updateMinZoomScaleForSize(view.bounds.size)
     }
+    
+    // MARK: - Helper Methods
     
     fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
         let widthScale = size.width / imageView.bounds.width

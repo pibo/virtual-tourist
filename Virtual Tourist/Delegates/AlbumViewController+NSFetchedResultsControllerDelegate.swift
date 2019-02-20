@@ -6,7 +6,6 @@
 //  Copyright © 2019 Felipe Ribeiro. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 extension AlbumViewController: NSFetchedResultsControllerDelegate {

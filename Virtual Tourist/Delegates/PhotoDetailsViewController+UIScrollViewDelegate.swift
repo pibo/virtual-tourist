@@ -18,6 +18,8 @@ extension PhotoDetailsViewController: UIScrollViewDelegate {
         updateConstraintsForSize(view.bounds.size)
     }
     
+    // MARK: - Helper Methods
+    
     func updateConstraintsForSize(_ size: CGSize) {
         let yOffset = max(0, (size.height - imageView.frame.height) / 2)
         imageViewTopConstraint.constant = yOffset - 56.0
