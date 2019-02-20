@@ -27,6 +27,7 @@ class AlbumViewController: UIViewController {
     
     var fetchedResultsController: NSFetchedResultsController<Photo>!
     var location: Location!
+    var deleteOperations: [BlockOperation] = []
     var isLoading: Bool = false {
         didSet {
             activityIndicator.isHidden = !isLoading
@@ -45,6 +46,7 @@ class AlbumViewController: UIViewController {
     @IBOutlet var photoCollection: UICollectionView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var refreshButtonItem: UIBarButtonItem!
+    @IBOutlet var deleteButtonItem: UIBarButtonItem!
     
     // MARK: - Life Cycle Methods
     
@@ -67,9 +69,10 @@ class AlbumViewController: UIViewController {
         super.setEditing(editing, animated: animated)
         
         if editing {
-            
+            navigationItem.setRightBarButtonItems([editButtonItem, deleteButtonItem], animated: true)
         } else {
             photoCollection.indexPathsForSelectedItems?.forEach { photoCollection.deselectItem(at: $0, animated: true) }
+            navigationItem.setRightBarButtonItems([editButtonItem, refreshButtonItem], animated: true)
         }
     }
     
@@ -104,6 +107,7 @@ class AlbumViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        deleteButtonItem.enabled(false)
         navigationItem.setRightBarButtonItems([editButtonItem, refreshButtonItem], animated: false)
     }
     
@@ -164,5 +168,19 @@ class AlbumViewController: UIViewController {
             rightBarButtonItems = self.navigationItem.rightBarButtonItems!.replacing(self.activityIndicatorButtonItem, with: self.refreshButtonItem)
             self.navigationItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
         }
+    }
+    
+    @IBAction func deleteSelectedPhotos(_ sender: Any) {
+        guard let selectedIndexPaths = photoCollection.indexPathsForSelectedItems, isEditing else { return }
+
+        selectedIndexPaths.forEach {
+            let photo = fetchedResultsController.object(at: $0)
+            context.delete(photo)
+        }
+        
+        try? context.save()
+
+        // End editing.
+        setEditing(false, animated: true)
     }
 }

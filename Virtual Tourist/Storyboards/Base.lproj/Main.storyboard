@@ -279,16 +279,25 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="912-1P-DOz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="pkU-Ph-8Tk">
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                            <connections>
-                                <action selector="refresh:" destination="2oQ-vA-m96" id="wWv-hQ-H9e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="pkU-Ph-8Tk">
+                                <inset key="imageInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <action selector="refresh:" destination="2oQ-vA-m96" id="wWv-hQ-H9e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="okX-ig-2ba">
+                                <color key="tintColor" name="Primary Red"/>
+                                <connections>
+                                    <action selector="deleteSelectedPhotos:" destination="2oQ-vA-m96" id="ID8-N9-scw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="FnW-ox-LQl" id="vTN-59-HUe"/>
+                        <outlet property="deleteButtonItem" destination="okX-ig-2ba" id="d5t-am-k0x"/>
                         <outlet property="photoCollection" destination="6HU-jZ-6gM" id="xzw-4T-j3o"/>
                         <outlet property="refreshButtonItem" destination="pkU-Ph-8Tk" id="wUd-pW-1AT"/>
                     </connections>

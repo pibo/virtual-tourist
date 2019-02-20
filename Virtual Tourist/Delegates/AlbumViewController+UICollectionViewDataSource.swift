@@ -49,6 +49,16 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return hasPhoto && isEditing
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        deleteButtonItem.enabled(true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView.indexPathsForSelectedItems == nil || collectionView.indexPathsForSelectedItems!.isEmpty {
+            deleteButtonItem.enabled(false)
+        }
+    }
+    
     // Determine header size depending if there are photos or not.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let height: CGFloat = photos.count > 0 ? 400.0 : 512.0
